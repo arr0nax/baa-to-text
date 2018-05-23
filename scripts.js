@@ -29,7 +29,7 @@ function translate() {
   if (raw_human_text && raw_sheep_text) {
     confused();
   } else if (raw_human_text) {
-    var split_text = raw_human_text.split('');
+    var split_text = raw_human_text.toLowerCase().split('');
     var new_split_text = [];
     for (var i=0; i<split_text.length; i++) {
       if (human_to_sheep[split_text[i]]) {
@@ -54,7 +54,7 @@ function translate() {
     }
     const new_human_text = new_split_text.join("");
     human_text.value = new_human_text;
-    
+
   } else {
     confused();
   }
